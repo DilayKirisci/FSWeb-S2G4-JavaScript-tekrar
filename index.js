@@ -94,20 +94,20 @@ var ucetambolunenler,
 
 //3a çözümü
 
-let min = sayilar[0];
-let max = sayilar[0];
+enkucuk = sayilar[0];
+enbuyuk = sayilar[0];
 
-for (let i = min; i < sayilar.length; i++) {
-	if (sayilar[i] < min) {
-		min = sayilar[i];
-		console.log(min);
+for (let i = enkucuk; i < sayilar.length; i++) {
+	if (sayilar[i] < enkucuk) {
+		enkucuk = sayilar[i];
+		console.log(enkucuk);
 	}
 }
 
-for (let i = max; i < sayilar.length; i++) {
-	if (sayilar[i] > max) {
-		max = sayilar[i];
-		console.log(max);
+for (let i = enbuyuk; i < sayilar.length; i++) {
+	if (sayilar[i] > enbuyuk) {
+		enbuyuk = sayilar[i];
+		console.log(enbuyuk);
 	}
 }
 
@@ -130,6 +130,8 @@ siralisayilar = sayilar.filter((sayi) => sayi < 500);
 console.log(siralisayilar.sort((a, b) => a - b));
 
 //3f çözümü
+
+const tekrarlar = {};
 for (let i = 0; i < sayilar.length; i++) {
 	if (tekrarlar[sayilar[i]]) {
 		tekrarlar[sayilar[i]]++;
@@ -138,14 +140,14 @@ for (let i = 0; i < sayilar.length; i++) {
 	}
 }
 
-const tekraredensayilar = [];
+tekraredensayilar = [];
 
 // tekrar sayılarını tekraredensayilar dizisine aktar
 for (let sayi in tekrarlar) {
 	if (tekrarlar[sayi] > 1) {
 		const tekrarSayisi = tekrarlar[sayi];
 		tekraredensayilar.push(
-			`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir.`
+			`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir`
 		);
 	}
 }
